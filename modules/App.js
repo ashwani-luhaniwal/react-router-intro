@@ -1,7 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom'; // Router component from React
-import About from './About';
-import Repos from './Repos';
 import NavLink from './NavLink';
 
 export default class App extends React.Component {
