@@ -1,8 +1,8 @@
 {
-  "name": "react-router-intro",
+  "name": "react-router-intro-app",
   "version": "1.0.0",
-  "description": "Introduction to React Router by examples",
-  "main": "index.js",
+  "description": "Introduction to React Router Intro App",
+  "main": "index.jsx",
   "scripts": {
     "start": "webpack-dev-server --inline --content-base ."
   },
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "React",
-    "Router",
-    "Tutorial"
+    "Router"
   ],
   "author": "Ashwani K Luhaniwal",
   "license": "MIT",
@@ -21,11 +20,6 @@
     "url": "https://github.com/ashwani-luhaniwal/react-router-intro/issues"
   },
   "homepage": "https://github.com/ashwani-luhaniwal/react-router-intro#readme",
-  "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-router": "^4.2.0"
-  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -34,5 +28,10 @@
     "http-server": "^0.10.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0"
   }
 }
