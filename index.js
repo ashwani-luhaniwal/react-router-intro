@@ -5,13 +5,22 @@ import App from './modules/App';
 import About from './modules/About';
 import Repos from './modules/Repos';
 import Repo from './modules/Repo';
+import Home from './modules/Home';
 
 ReactDOM.render(
     (
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/" component={App} />
+                    <Route path="/" component={App} />
+                    {/* 
+                        add the Home component here, as a child of '/' 
+                        "IndexRoute" has no path. It becomes "this.props.children" of parent when no 
+                        other child of parent matches or when the parent's route matches exactly
+                        React Router looks for an index route if a route's path matches exactly.
+
+                        <IndexRoute component={Home} />
+                    */}
                     <Route path="/about" component={About} />
                     {/* Nest the "Repo" route under "Repos" route. */}
                     <Route path="/repos" component={Repos}>
