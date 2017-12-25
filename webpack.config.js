@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './LocalSportsApp/index.js',
+    entry: './ReactRouterWeb/Basic/index.js',
     output: {
         filename: 'bundle.js',
         publicPath: ''
