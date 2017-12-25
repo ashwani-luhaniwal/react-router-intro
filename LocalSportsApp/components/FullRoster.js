@@ -1,3 +1,8 @@
+/**
+ * FullRoster iterates over all of the players and creates a link to 
+ * their profile page.
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Player from './Player';
@@ -9,11 +14,11 @@ export default class FullRoster extends React.Component {
             <div>
                 <ul>
                     {
-                        PlayerAPI.all().map((p) =>
+                        this.props.all.map(p => (
                             <li key={p.number}>
                                 <Link to={`/roster/${p.number}`}>{p.name}</Link>
                             </li>
-                        )
+                        ))
                     }
                 </ul>
             </div>

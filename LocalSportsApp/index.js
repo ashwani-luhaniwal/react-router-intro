@@ -7,8 +7,9 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+// It uses HashRouter instead of BrowserRouter because there is no server to match URLs
 import { BrowserRouter } from 'react-router-dom'; // Router component from React
-import App from './modules/App';
+import App from './components/App';
 
 ReactDOM.render(
     (

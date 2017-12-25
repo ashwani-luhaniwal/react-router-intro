@@ -1,3 +1,7 @@
+/**
+ * Header component creates links that cane be used to navigate between routes.
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
