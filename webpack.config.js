@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './ReactRouterWeb/Basic/index.js',
+    entry: './ReactRouterWeb/URLParameters/index.js',
     output: {
         filename: 'bundle.js',
         publicPath: ''
