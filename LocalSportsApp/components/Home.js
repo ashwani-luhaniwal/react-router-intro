@@ -1,6 +1,13 @@
 import React from 'react';
 
-export default class Home extends React.Component {
+const Home = () => (
+    <div>
+        <h1>Welcome to Local Sports Website!</h1>
+    </div>
+)
+export default Home;
+
+/*export default class Home extends React.Component {
     render() {
         return (
             <div>
@@ -8,4 +15,4 @@ export default class Home extends React.Component {
             </div>
         );
     }
-}
+}*/

@@ -6,9 +6,16 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Player from './Player';
 import FullRoster from './FullRoster';
-import { debug } from 'util';
 
-export default class Roster extends React.Component {
+const Roster = () => (
+    <Switch>
+        <Route exact path='/roster' component={FullRoster} />
+        <Route path='/roster/:number' component={Player} />
+    </Switch>
+)
+export default Roster
+
+/*export default class Roster extends React.Component {
     render() {
         return (
             {/*
@@ -21,14 +28,16 @@ export default class Roster extends React.Component {
 
                 The :number part of path /roster/:number means part of pathname that comes after 
                 /roster/ will be captured and stored as "match.params.number". 
-            */}
-            <div>
-                <h2>This is Roster Page</h2>
-                <Switch>
-                    <Route exact path='/roster' component={FullRoster} />
-                    <Route path='/roster/:number' component={Player} />
-                </Switch>
-            </div>
+            */ /*}
+            <Router>
+                <div>
+                    <h2>This is Roster Page</h2>
+                    <Switch>
+                        <Route exact path='/roster' component={FullRoster} />
+                        <Route path='/roster/:number' component={Player} />
+                    </Switch>
+                </div>
+            </Router>
         );
     }
-}
+}*/
