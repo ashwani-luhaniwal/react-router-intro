@@ -3,12 +3,16 @@ import fakeAuth from './fakeAuth';
 import { Redirect } from 'react-router-dom';
 
 export default class Login extends React.Component {
-    state = {
-        redirectToReferer: false
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            redirectToReferer: false
+        };
+        this.login = this.login.bind(this);
+    }
 
-    login = () => {
-        fakeAuth.authenticate(() => {
+    login() {
+        this.props.authenticate(() => {
             this.setState({ redirectToReferer: true })
         })
     }
