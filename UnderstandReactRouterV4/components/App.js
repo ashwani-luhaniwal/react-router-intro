@@ -46,6 +46,23 @@
  * -----------------
  * When multiple <Route>s are used together, all the routes that match are rendered inclusively.
  * With <Switch>, only the first child <Route> that matches the location gets rendered.
+ * 
+ * ---------
+ * Redirect
+ * ---------
+ * Like server-side redirects, <Redirect> will replace the current location in the history stack with
+ * new location. The new location is specified by the "to" prop.
+ *      <Redirect to={{pathname: '/login', state: {from: props.location}}}
+ * If someone tries to access the /admin while logged out, they'll be redirected to /login route.
+ * The information about current location is passed via state, so that if the authentication is
+ * successful, the user can be redirected back to original location. Inside child component, you can
+ * access this information at "this.props.location.state"
+ * 
+ * --------------
+ * Custom Routes
+ * --------------
+ * A custom route is a fancy word for route nested inside a component. If we need to make a decision
+ * whether a route should be rendered or not, writing a custom route is the way to go.
  */
 
 import React from 'react';
@@ -53,6 +70,9 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Category from './Category';
 import Products from './Products';
+import Login from './Login';
+import PrivateRoute from './PrivateRoute';
+import { fakeAuth } from './fakeAuth';
 
 export default class App extends React.Component {
     render() {
@@ -74,7 +94,9 @@ export default class App extends React.Component {
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route path='/category' component={Category} />
-                    <Route path='/products' component={Products} />
+                    <Route path='/login' component={Login} />
+                    {/* fakeAuth.isAuthenticated returns true if the user is logged in and false otherwise */}
+                    <PrivateRoute authed={fakeAuth.isAuthenticated} path='/products' component={Products} />
                 </Switch>
 
             </div>
