@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import AuthButton from './AuthButton';
+import PrivateRoute from './PrivateRoute';
 
 const AuthExample = () => (
     <div>

@@ -2,11 +2,11 @@ import { setTimeout } from "timers";
 
 const fakeAuth = {
     isAuthenticated: false,
-    authenticate = (cb) => {
+    authenticate(cb) {
         this.isAuthenticated = true;
         setTimeout(cb, 100);    // fake async
     },
-    signout = (cd) => {
+    signout(cb) {
         this.isAuthenticated = false;
         setTimeout(cb, 100);
     }
