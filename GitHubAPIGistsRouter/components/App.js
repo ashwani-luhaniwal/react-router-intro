@@ -12,19 +12,21 @@ export default class App extends React.Component {
         super(props);
         this.state = {
             gists: null
-        }
+        };
     }
 
     componentDidMount() {
         fetch('https://api.github.com/gists')
             .then(res => res.json())
             .then(gists => {
-                this.setState({ gists: gists });
+                // console.log(gists);
+                this.setState({ gists });
             });
     }
 
     render() {
-        const { gists } = this.state.gists;
+        const { gists } = this.state;
+        console.log(gists);
         return (
             <Root>
                 <Sidebar>
@@ -43,7 +45,12 @@ export default class App extends React.Component {
                 <Main>
                     <Switch>
                         <Route exact path='/' component={Home} />
-                        <Route path='/g/:gistId' component={Gist} />
+                        {/* If we have gists then only render the Gist component */}
+                        {gists && (
+                            <Route path='/g/:gistId' render={ ({match}) => (
+                                <Gist gist={ gists.find(g => g.id === match.params.gistId) } />
+                            )} />
+                        )}
                     </Switch>
                 </Main>
             </Root>
