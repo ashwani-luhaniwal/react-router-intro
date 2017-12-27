@@ -1,3 +1,9 @@
+/**
+ * The key idea behind version 4 is "declarative composability" - it embraces the component
+ * concept that makes React so great and applies it to routing. Everyr part of React 
+ * Router 4 is a React component: Router, Router, Link.
+ */
+
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import Root from './Root';
