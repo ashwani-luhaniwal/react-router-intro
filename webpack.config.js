@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './TitleListRouterApp/index.js',
+    entry: './GitHubAPIGistsRouter/index.js',
     output: {
         filename: 'bundle.js',
         publicPath: ''
